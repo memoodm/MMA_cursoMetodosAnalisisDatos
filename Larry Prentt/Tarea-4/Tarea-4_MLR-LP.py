@@ -115,6 +115,5 @@ plt.show()
 
 # https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.probplot.html
 
-# mejor referencia
-https://pythonhealthcare.org/tag/pp-plot/
+# https://pythonhealthcare.org/tag/pp-plot/
 
