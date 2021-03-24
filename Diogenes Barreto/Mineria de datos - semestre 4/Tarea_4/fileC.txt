@@ -1,0 +1,14 @@
+[               Organization Name  ... Intersección
+0                        LA HAUS  ...          NaN
+1                         ELENAS  ...          NaN
+2                          DONDO  ...          NaN
+3                          TPAGA  ...          NaN
+4                         AFLORE  ...          NaN
+..                           ...  ...          ...
+995                 FLORES Y MAS  ...          NaN
+996                   FOCUS DATA  ...          NaN
+997              OFICINA VIRTUAL  ...          NaN
+998                         UZER  ...          NaN
+999  LABORATORIOS CONTECON URBAR  ...          NaN
+
+[1000 rows x 124 columns]]
