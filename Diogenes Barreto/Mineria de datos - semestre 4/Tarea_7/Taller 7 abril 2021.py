@@ -94,37 +94,43 @@ sc_y.inverse_transform(regressor.predict(sc_X.transform([[6.5]])))
 
 # Visualizando los resultados
 
-plt.scatter(sc_X.inverse_transform(X), sc_y.inverse_transform(y), color = 'red') 
+plt.scatter(sc_X.inverse_transform(X), sc_y.inverse_transform(y), color = 'red') ## Kernel function = Radial basis function
 plt.plot(sc_X.inverse_transform(X), sc_y.inverse_transform(regressor.predict(X)), color = 'blue', label ='rbf')
 plt.title('(SVR)')
 plt.xlabel('Nivel o Cargo Laboral')
 plt.ylabel('Salario')
 plt.show()
 
+# Entrenamiento de los modelos SVR con todo el dataset de level y salario
+# regressor.fit(X,Y) # Warning para que se use Ravel
 regressor = SVR(kernel="rbf")
 regressor.fit(X,y.ravel())
 
 #%%% Polinomial
-regressor = SVR(kernel="poly")
-regressor.fit(X,y.ravel())
-print(regressor)
+regressor1 = SVR(kernel="poly", degree=3)
+regressor1.fit(X,y.ravel())
+print(regressor1)
 
 # Reescala un nivel de 6.5
 sc_X.transform([[6.5]])
 
 # predice el salario rescalado del nivel reescalado
-regressor.predict(sc_X.transform([[6.5]]))
+regressor1.predict(sc_X.transform([[6.5]]))
 
 # Prediccion de un nuevo resultado usando transformacion inversa
-sc_y.inverse_transform(regressor.predict(sc_X.transform([[6.5]])))
+sc_y.inverse_transform(regressor1.predict(sc_X.transform([[6.5]])))
 
 # Visualizando los resultados
 
 plt.scatter(sc_X.inverse_transform(X), sc_y.inverse_transform(y), color = 'red') 
-plt.plot(sc_X.inverse_transform(X), sc_y.inverse_transform(regressor.predict(X)), color = 'blue', label ='poly')
-plt.title('(POLY)')
+plt.plot(sc_X.inverse_transform(X), sc_y.inverse_transform(regressor.predict(X)), color = 'blue', label ='rbf')
+plt.plot(sc_X.inverse_transform(X), sc_y.inverse_transform(regressor1.predict(X)), color = 'green', label ='poly')
+plt.title('(POLY vs SVR)')
 plt.xlabel('Nivel o Cargo Laboral')
-plt.ylabel('Salario')
+plt.xticks(fontsize = 20)
+plt.yticks(fontsize = 20)
+plt.ylabel('Salario', fontsize = 20)
+plt.legend(fontsize = 22)
 plt.show()
 
 
